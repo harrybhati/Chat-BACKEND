@@ -14,6 +14,9 @@ app.use(cors(
              });
 app.use(express.json());
 
+app.get("/",(req,resp)=>{
+    resp.send("hello")});
+
 // Register Api
 app.post("/register", async (req, resp) => {
     try{
