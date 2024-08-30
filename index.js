@@ -6,7 +6,12 @@ const Sing = require("./SingInSch");
 const cors = require("cors");
 const Message = require("./ChatSch");
 
-app.use(cors());
+app.use(cors(
+    {
+    origin:[""],
+    methods:["POST","GET","PUT","DELETE"),
+       credentials:true
+             });
 app.use(express.json());
 
 // Register Api
