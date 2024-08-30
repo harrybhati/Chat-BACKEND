@@ -6,12 +6,7 @@ const Sing = require("./SingInSch");
 const cors = require("cors");
 const Message = require("./ChatSch");
 
-app.use(cors(
-    {
-    origin:["https://chat-backend-seven-dusky.vercel.app"],
-    methods:["POST","GET"),
-       credentials:true
-             });
+app.use(cors());
 app.use(express.json());
 
 app.get("/",(req,resp)=>{
