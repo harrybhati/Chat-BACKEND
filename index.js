@@ -6,7 +6,11 @@ const Sing = require("./SingInSch");
 const cors = require("cors");
 const Message = require("./ChatSch");
 
-app.use(cors());
+app.use(cors({
+  origin: 'https://chat-front-end-weld.vercel.app', 
+  methods: ['GET', 'POST', 'PUT', 'DELETE'], 
+  credentials: true, 
+}));
 app.use(express.json());
 
 app.get("/",(req,resp)=>{
