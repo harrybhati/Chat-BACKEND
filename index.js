@@ -7,8 +7,9 @@ const cors = require("cors");
 const Message = require("./ChatSch");
 
 app.use(cors({
-  origin: ["https://front-end-chat-xi.vercel.app/"], 
-  methods: ['GET', 'POST', 'PUT', 'DELETE'] 
+  origin: 'https://frontend-chat-oaiv.onrender.com', // replace with your frontend URL
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true, // Enable cookies and other credentials if needed
 }));
 app.use(express.json());
 
