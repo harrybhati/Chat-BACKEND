@@ -9,7 +9,7 @@ const Message = require("./ChatSch");
 app.use(cors(
     {
     origin:["https://chat-backend-seven-dusky.vercel.app"],
-    methods:["POST","GET","PUT","DELETE"),
+    methods:["POST","GET"),
        credentials:true
              });
 app.use(express.json());
