@@ -29,7 +29,7 @@ connectDb();
 
 // ================= Root =================
 app.get("/", (req, resp) => {
-  resp.send("hello");
+  resp.send("hello jai shree ram");
 });
 
 // ================= JWT Middleware =================
