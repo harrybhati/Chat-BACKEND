@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const messageSchema = new mongoose.Schema({
-    senderId: {
+  senderId: {
     type: String,
     required: true,
   },
@@ -25,8 +25,9 @@ const messageSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   }
-},{collection:'Message'});
+}, { collection: 'Message' });
 
-module.exports = mongoose.model('Message', messageSchema);
+// ✅ Use mongoose.models to avoid OverwriteModelError on serverless
+const chatMessage = mongoose.models.Message || mongoose.model('Message', messageSchema);
 
-
+module.exports = chatMessage;
