@@ -11,15 +11,10 @@ const Chat = require("./DB/UserSchema");
 const chatMessage = require("./DB/ChatSch");
 
 // ✅ CORS (local + Vercel frontend)
-app.use(
-  cors({
-    origin: [
-      "http://localhost:5173",
-      "https://your-frontend.vercel.app" // replace later
-    ],
-    credentials: true,
-  })
-);
+app.use(cors({
+  origin: "https://chat-front-end-puce.vercel.app", // frontend domain
+  credentials: true, // allow cookies
+}));
 
 app.use(express.json());
 app.use(cookieParser());
