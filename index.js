@@ -47,7 +47,7 @@ const tokenMiddleware = (req, resp, next) => {
 // ================= Register =================
 app.post("/signup", async (req, res) => {
   try {
-    const { name, email, password } = req.body;
+    let { name, email, password } = req.body;
     email = email.toLowerCase();
 
     const userExist = await Chat.findOne({ email });
@@ -84,7 +84,7 @@ app.post("/signup", async (req, res) => {
 // ================= Login =================
 app.post("/login", async (req, res) => {
   try {
-    const { email, password } = req.body;
+    let { email, password } = req.body;
     email = email.toLowerCase();
 
     const user = await Chat.findOne({ email });
